@@ -1,5 +1,7 @@
 package com.baotrungtn.listmaker
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -44,5 +46,16 @@ class ListDetailActivity : AppCompatActivity() {
                     recyclerAdapter.addItem(task)
                     dialog.dismiss()
                 }).create().show()
+    }
+
+    override fun onBackPressed() {
+        val bundle = Bundle()
+        bundle.putParcelable(MainActivity.INTENT_LIST_KEY, list)
+        val intent = Intent()
+        intent.putExtras(bundle)
+        setResult(Activity.RESULT_OK, intent)
+
+        super.onBackPressed()
+
     }
 }
