@@ -8,8 +8,11 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/lists_recyclerview"
+    <fragment
+        android:id="@+id/list_selection_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:name="com.baotrungtn.listmaker.ListSelectionFragment"
+        />
+
 </android.support.constraint.ConstraintLayout>
